@@ -1,6 +1,12 @@
+var nummbers = [0,1,2,3,4,5,6,7,8,9];
+var specialChar = ["!@#$%^&*"]
+var lowerCase = ["abcdefghijklmnopqrstuvwxyz"]
+var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
+
 // When generate pw button is clicked:
 
 // ask user how many characters do they need in their pw (8-128)
+// TODO: set up rule for length of password
 var passwordLength = prompt("How many characters does your password need?");
 console.log("Password Length", passwordLength);
 
