@@ -1,45 +1,65 @@
-// Create variable for password length
-var passwordLength = Number(prompt("How long do you want your password (please choose a number between 8-128)?"));
-console.log("password length:", passwordLength);
+var password = []
+var nummbers = [0,1,2,3,4,5,6,7,8,9];
+var specialChar = ["!@#$%^&*"]
+var lowerCase = ["abcdefghijklmnopqrstuvwxyz"]
+var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
 
-var passwordCombo = "";
-// Create confirm for numbers needed or not
+// When generate pw button is clicked:
+
+// ask user how many characters do they need in their pw (8-128)
+// TODO: set up rule for length of password
+var passwordLength = prompt("How many characters does your password need?");
+console.log("Password Length", passwordLength);
+
+// TODO: store user input for total characters
+
+// ask user if they want to include a number
 var confirmNumbers = confirm("Does your password need a number?");
 if(confirmNumbers){
-  passwordCombo = "0123456789";
+  console.log("Numbers needed?", "Yes");
 }
 else{
-  passwordCombo = "";
+  console.log("Numbers needed?", "No");
 }
-console.log(passwordCombo);
 
-// // Create confirm for special characters
-// var confirmSpecialChar = confirm("Does your password need a special character?");
-// if(confirmSpecialChar){
-//   console.log("Special characters needed?", "Yes");
-// }
-// else{
-//   console.log("Special characters needed?", "No");
-// }
+// TODO: store user input for numbers
 
-// // Create confirm for lower case
-// var confirmLowerCase = confirm("Do you want your password to include lower case letters?");
-// if(confirmLowerCase){
-//   console.log("Lowercase needed?", "Yes");
-// }
-// else{
-//   console.log("Lowercase needed?", "No");
-// }
+// ask user if they want to include special characters
+var confirmSpecialChar = confirm("Does your password need a special character?");
+if(confirmSpecialChar){
+  console.log("Special characters needed?", "Yes");
+}
+else{
+  console.log("Special characters needed?", "No");
+}
 
-// // Create confirm for upper case
-// var confirmUpperCase = confirm("Do you want your password to include upper case letters?");
-// if(confirmUpperCase){
-//   console.log("Uppercase needed?", "Yes");
-// }
-// else{
-//   console.log("Uppercase needed?", "No");
-// }
+// TODO: store user input for special characters
 
+// ask user if they want to inclue lower case
+var confirmLowerCase = confirm("Do you want your password to include lower case letters?");
+if(confirmLowerCase){
+  console.log("Lowercase needed?", "Yes");
+}
+else{
+  console.log("Lowercase needed?", "No");
+}
+
+// TODO: store user infor for lower case
+
+// ask user if they want upper case
+var confirmUpperCase = confirm("Do you want your password to include upper case letters?");
+if(confirmUpperCase){
+  console.log("Uppercase needed?", "Yes");
+}
+else{
+  console.log("Uppercase needed?", "No");
+}
+
+// TODO: store user info for upper case 
+
+// TODO: validate user input meets at least one criteria
+// TODO: once all prompts are answered, password generates 
+// TODO: pw is displayed in alert or directly on screen
 
 
 // code below given by Joe at intro to hw. Expand!
