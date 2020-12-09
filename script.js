@@ -9,26 +9,44 @@ console.log("Password Length", passwordLength);
 // ask user if they want to include a number
 var confirmNumbers = confirm("Does your password need a number?");
 if(confirmNumbers){
-  console.log("Numbers Needed?", "Yes");
+  console.log("Numbers needed?", "Yes");
 }
 else{
-  console.log("Numbers Neede?", "No")
+  console.log("Numbers needed?", "No");
 }
 
 // TODO: store user input for numbers
 
 // ask user if they want to include special characters
 var confirmSpecialChar = confirm("Does your password need a special character?");
+if(confirmSpecialChar){
+  console.log("Special characters needed?", "Yes");
+}
+else{
+  console.log("Special characters needed?", "No");
+}
 
 // TODO: store user input for special characters
 
 // ask user if they want to inclue lower case
 var confirmLowerCase = confirm("Do you want your password to include lower case letters?");
+if(confirmLowerCase){
+  console.log("Lowercase needed?", "Yes");
+}
+else{
+  console.log("Lowercase needed?", "No");
+}
 
 // TODO: store user infor for lower case
 
 // ask user if they want upper case
 var confirmUpperCase = confirm("Do you want your password to include upper case letters?");
+if(confirmUpperCase){
+  console.log("Uppercase needed?", "Yes");
+}
+else{
+  console.log("Uppercase needed?", "No");
+}
 
 // TODO: store user info for upper case 
 
