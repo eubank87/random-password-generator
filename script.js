@@ -2,26 +2,33 @@
 
 // ask user how many characters do they need in their pw (8-128)
 var passwordLength = prompt("How many characters does your password need?");
+console.log("Password Length", passwordLength);
 
 // TODO: store user input for total characters
 
-// TODO: ask user if they want to include a number
-var numbers = confirm("Does your password need a number?");
+// ask user if they want to include a number
+var confirmNumbers = confirm("Does your password need a number?");
+if(confirmNumbers){
+  console.log("Numbers Needed?", "Yes");
+}
+else{
+  console.log("Numbers Neede?", "No")
+}
 
 // TODO: store user input for numbers
 
-// TODO: ask user if they want to include special characters
-var specialChar = confirm("Does your password need a special character?");
+// ask user if they want to include special characters
+var confirmSpecialChar = confirm("Does your password need a special character?");
 
 // TODO: store user input for special characters
 
-// TODO: ask user if they want to inclue lower case
-var lowerCase = confirm("Do you want your password to include lower case letters?");
+// ask user if they want to inclue lower case
+var confirmLowerCase = confirm("Do you want your password to include lower case letters?");
 
 // TODO: store user infor for lower case
 
-// TODO: ask user if they want upper case
-var upperCase = confirm("Do you want your password to include upper case letters?");
+// ask user if they want upper case
+var confirmUpperCase = confirm("Do you want your password to include upper case letters?");
 
 // TODO: store user info for upper case 
 
