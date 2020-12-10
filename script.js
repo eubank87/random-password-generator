@@ -2,13 +2,18 @@
 
 function generatePassword(){
   // Create array of CAP letters, lower letters, numbers and special characters
-  var allNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-  var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*"];
-  var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  var uppperCase = ["A","B", "C", "D","E","F","G","H","I","J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var allNumbers = "1234567890";
+  // var allNumsSplit = allNumbers.split ("");
+  var specialChar = "!@#$%^&*";
+  // var specialCharSplit = specialChar.split ("");
+  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  // var lowerCaseSplit = lowerCase.split ("");
+  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  // var upperCaseSplit = upperCase.split ("");
   
   // Create empty array to hold user requested input
   var chosenChar = [];
+  // var chosenCharSplit = chosenChar.split ("");
 
   // Create if statements that check if user says yes/no to different confirms, and based on response push those specific characters to our empty array
 
@@ -29,7 +34,7 @@ function generatePassword(){
 
   var confirmUpperCase = confirm("Does your password need uppercase letters?");
   if(confirmUpperCase){
-    chosenChar = chosenChar + uppperCase;
+    chosenChar = chosenChar + upperCase;
   } 
   console.log("final password", chosenChar)
 
@@ -56,16 +61,18 @@ function generatePassword(){
   }
 
   // Create var to hold the final results
-  var finalPassword = [] 
-  // console.log(finalPassword+chosenChar)
+  var finalPassword = ""
+
 
   // TODO: I need a for loop to loop over final array, it should run based on the results of the prompt when asked for password length, choose randomly from final array that holds all the characters user wants and save them to our ultimate password variable.
 
   for(var i = 0; i<passwordLength; i++){
-    finalPassword.push(chosenChar[Math.floor(Math.random() * chosenChar.length)])
+    finalPassword+= chosenChar[Math.floor(Math.random() * chosenChar.length)]
   }
 
+  // var finalPassJoin = finalPassword.concat(" ")
 
+  // console.log(finalPassJoin)
   console.log(finalPassword)
 
   // TODO: Return final results to page, outside of for loop at end of function
