@@ -1,85 +1,139 @@
+var allNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+var specialChar = ["!", "@", "#", "$", "%", "^", "&", "*"];
+var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var uppperCase = ["A","B", "C", "D","E","F","G","H","I","J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+// TODO: Create generatePassword function and write logic within this function
+
+function generatePasswordData() {
+  // TODO: Create array of CAP letters, lower letters, numbers and special characters
+
+  // TODO: Create empty array to hold user requested input
+  // var finalPassword = [];
 
 
-// code below given by Joe at intro to hw. Expand!
-function generatePassword(){
-  var password = []
-  var nummbers = [0,1,2,3,4,5,6,7,8,9];
-  var specialChar = ["!@#$%^&*"]
-  var lowerCase = ["abcdefghijklmnopqrstuvwxyz"]
-  var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
-
-  // When window is opened:
+  // TODO: Create if statements that check if user says yes/no to different confirms, and based on response push those specific characters to our empty array
 
   // ask user how many characters do they need in their pw (8-128)
-  // TODO: set up rule for length of password
-  var passwordLength = prompt("How many characters does your password need (please input a number from 8-128?");
-  // console.log("Password Length", passwordLength);
-
-  // TODO: store user input for total characters
-  // TODO: change user input from string to number
-  password.push(passwordLength);
-  // console.log(password);
-
-  // ask user if they want to include a number
+  var passwordLength = parseInt(prompt("How many characters does your password need (please input a number from 8-128?"));
+    if(isNaN(passwordLength) === true){
+      alert("Please enter a valid number bewteen 8-128")
+      return
+    }
+    if(passwordLength < 8){
+      alert("Password must be at least 8 characters long")
+      return
+    }
+    if(passwordLength > 128){
+      alert("Password max characters is 128")
+      return
+    }
+  
+  
   var confirmNumbers = confirm("Does your password need a number?");
-  if(confirmNumbers){
-    console.log("Numbers needed?", "Yes");
-  }
-  else{
-    console.log("Numbers needed?", "No");
-  }
-  password.push(confirmNumbers);
-  // console.log(password);
 
-  // TODO: store user input for numbers
+  // if(confirmNumbers){
+  //   // TODO: store user input for numbers
+  //   finalPassword = finalPassword + allNumbers;
+  // }
 
   // ask user if they want to include special characters
   var confirmSpecialChar = confirm("Does your password need a special character?");
-  if(confirmSpecialChar){
-    console.log("Special characters needed?", "Yes");
-  }
-  else{
-    console.log("Special characters needed?", "No");
-  }
-  password.push(confirmSpecialChar);
+  // if(confirmSpecialChar){
+  //   // TODO: store user input for special characters
+  //   finalPassword = finalPassword + specialChar;
+  // }
 
-  // TODO: store user input for special characters
 
   // ask user if they want to inclue lower case
   var confirmLowerCase = confirm("Do you want your password to include lower case letters?");
-  if(confirmLowerCase){
-    console.log("Lowercase needed?", "Yes");
-  }
-  else{
-    console.log("Lowercase needed?", "No");
-  }
-  password.push(confirmLowerCase);
+  // if(confirmLowerCase){
+  //   // TODO: store user infor for lower case
+  //   finalPassword = finalPassword + lowerCase;
+  // }
 
-  // TODO: store user infor for lower case
 
   // ask user if they want upper case
   var confirmUpperCase = confirm("Do you want your password to include upper case letters?");
-  if(confirmUpperCase){
-    console.log("Uppercase needed?", "Yes");
+
+  if(confirmNumbers === false && confirmSpecialChar === false && confirmLowerCase === false && confirmUpperCase === false){
+    alert("Please choose at least one option");
+    return 
   }
-  else{
-    console.log("Uppercase needed?", "No");
+
+
+
+  var passwordOptions = {
+    passwordLength:passwordLength, 
+    confirmNumbers:confirmNumbers,
+    confirmSpecialChar:confirmSpecialChar,
+    confirmLowerCase:confirmLowerCase,
+    confirmUpperCase:confirmUpperCase
   }
-  password.push(confirmUpperCase);
-  console.log(password);
+  return passwordOptions
 
-  // TODO: store user info for upper case 
+  // TODO: create a conditional to make sure user has chosen at least one type of character
 
-  // TODO: validate user input meets at least one criteria
+  // TODO: store user input for total characters
 
-  // TODO: compile user input into one password
-  // function passwordMaker(passwordLength,confirmNumbers,confirmSpecialChar,confirmLowerCase,confirmUpperCase);
+  // TODO: change user input from string to number
 
-  // TODO: once all prompts are answered, password generates 
-  // TODO: pw is displayed in alert or directly on screen
-    return password
+
+
+
+
+
+
+  // TODO: Create var to hold the final results
+
+  // TODO: I need a for loop to loop over final array, it should run based on the results of the prompt when asked for password length, choose randomly from final array that holds all the characters user wants and save them to our ultimate password variable.
+
+  // TODO: Return final results to page, outside of for loop at end of function
+
+
+
+
+}
+function randomSelect(array){
+  var randomIndex = Math.floor(Math.random()*array.length)
+  var randomElement = array[randomIndex]
+  return randomElement
 }
 
+function generatePassword(){
+  var options = generatePasswordData()
+  var result = []
+  var possibleChar = []
+  var guaranteeChar = []
+  if(options.confirmNumbers){
+    possibleChar = possibleChar.concat(allNumbers)
+    guaranteeChar.push(randomSelect(allNumbers))
+  } 
+
+  if(options.confirmSpecialChar){
+    possibleChar = possibleChar.concat(specialChar)
+    guaranteeChar.push(randomSelect(specialChar))
+  } 
+
+  if(options.confirmLowerCase){
+    possibleChar = possibleChar.concat(lowerCase)
+    guaranteeChar.push(randomSelect(lowerCase))
+  } 
+  if(options.confirmUpperCase){
+    possibleChar = possibleChar.concat(uppperCase)
+    guaranteeChar.push(randomSelect(uppperCase))
+  } 
+
+
+  for(var i = 0; i < options.length; i++){
+    var possibleCharacters = randomSelect(possibleChar)
+    result.push(possibleCharacters)
+  }
+  for(var i = 0; i < guaranteeChar.length; i++){
+    result[i]= guaranteeChar[i]
+  }
+  return result.join("")
+}
 
 
 // Assignment Code
@@ -93,6 +147,5 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
