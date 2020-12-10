@@ -3,17 +3,14 @@
 function generatePassword(){
   // Create array of CAP letters, lower letters, numbers and special characters
   var allNumbers = "1234567890";
-  // var allNumsSplit = allNumbers.split ("");
   var specialChar = "!@#$%^&*";
-  // var specialCharSplit = specialChar.split ("");
   var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-  // var lowerCaseSplit = lowerCase.split ("");
   var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  // var upperCaseSplit = upperCase.split ("");
+
   
   // Create empty array to hold user requested input
   var chosenChar = [];
-  // var chosenCharSplit = chosenChar.split ("");
+;
 
   // Create if statements that check if user says yes/no to different confirms, and based on response push those specific characters to our empty array
 
@@ -64,18 +61,15 @@ function generatePassword(){
   var finalPassword = ""
 
 
-  // TODO: I need a for loop to loop over final array, it should run based on the results of the prompt when asked for password length, choose randomly from final array that holds all the characters user wants and save them to our ultimate password variable.
+  // I need a for loop to loop over final array, it should run based on the results of the prompt when asked for password length, choose randomly from final array that holds all the characters user wants and save them to our ultimate password variable.
 
   for(var i = 0; i<passwordLength; i++){
     finalPassword+= chosenChar[Math.floor(Math.random() * chosenChar.length)]
   }
 
-  // var finalPassJoin = finalPassword.concat(" ")
 
-  // console.log(finalPassJoin)
-  console.log(finalPassword)
 
-  // TODO: Return final results to page, outside of for loop at end of function
+  // Return final results to page, outside of for loop at end of function
 
   return finalPassword
 
